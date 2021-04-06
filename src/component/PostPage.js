@@ -5,19 +5,23 @@ const PostPage=(props)=>{
         return post.id===parseInt(props.match.params.id)
 
     })
-   console.log(props)
+   console.log(foundPost)
 
 
    return(
         <div>
             {foundPost ? 
+
                 <div className="post-detail-conatiner">
-                    post found
+                    <h3>{foundPost.title}</h3>
+                    <h4>{foundPost.description}</h4>
+                    <img src={foundPost.image_url} alt='' className='blog-pic'/>                      
                 </div>
-                
-                
-            :        
+                    
+            :       
+
             <p>no post found</p>
+
             }   
             
         </div>       
