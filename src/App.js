@@ -1,6 +1,8 @@
 import './App.css';
 import { Component } from 'react';
 import axios from 'axios';
+import {Route, Switch} from 'react-router-dom';
+import AllPost from './component/AllPost'
 
 class App extends Component{
   constructor(props){
@@ -17,28 +19,35 @@ class App extends Component{
       console.log(response.data)
 
       const hpData=response.data;
-    this.setState({hpData:hpData})
+    this.setState({
+      hpData:hpData,
+      apiDataLoaded:true
+    })
   }
 
 
   render(){
 
-          const hpData=this.state.hpData.map(res=>{
-            return(
-              <div className='post-container'>
-                <h3>{res.title}</h3>
-                <h4>{res.description}</h4>
-                <img src={res.image_url} alt='' className='blog-pic'/>
-
-              </div>
-            )
-          })
+         
 
 
       return (
-        <div className="App">
-          {hpData}
-        </div>
+
+      <div>
+        {this.state.apiDataLoaded ?
+
+          <div className="App">
+            <Route exact path='/allposts' render={(routerProps)=>(
+              <AllPost hpData={this.state.hpData} {...routerProps} />
+            )}/>          
+          </div>
+        
+        :
+          <p>data not loaded</p>
+        }
+
+      </div>
+
       );
   }
 }
