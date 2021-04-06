@@ -3,6 +3,7 @@ import { Component } from 'react';
 import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
 import AllPost from './component/AllPost'
+import PostPage from './component/PostPage';
 
 
 
@@ -15,6 +16,7 @@ class App extends Component{
     super(props);
     this.state={
       hpData:[],
+      postId:'',
       apiDataLoaded:false
      
     }
@@ -32,6 +34,13 @@ class App extends Component{
   }
 
 
+  getOnePost=async()=>{
+    const response=await axios.get(`${URL}/posts/${this.state.postId}`)
+  }
+
+
+
+
   render(){
 
          
@@ -45,7 +54,14 @@ class App extends Component{
           <div className="App">
             <Route exact path='/allposts' render={(routerProps)=>(
               <AllPost hpData={this.state.hpData} {...routerProps} />
-            )}/>          
+            )}/> 
+
+            <Route exact path="/PostPage/:id" render={(routerProps)=>(
+              <PostPage hpData={this.state.hpData} {...routerProps}/>
+            )}/>
+
+
+
           </div>
         
         :
