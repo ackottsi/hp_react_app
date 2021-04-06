@@ -4,6 +4,12 @@ import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
 import AllPost from './component/AllPost'
 
+
+
+
+
+const URL="https://hp-sample-blog.herokuapp.com"
+
 class App extends Component{
   constructor(props){
     super(props);
@@ -15,7 +21,7 @@ class App extends Component{
   }
 
   componentDidMount=async()=>{
-    const response=await axios.get("https://hp-sample-blog.herokuapp.com/posts")
+    const response=await axios.get(`${URL}/posts`)
       console.log(response.data)
 
       const hpData=response.data;
