@@ -21,23 +21,18 @@ class App extends Component{
   }
 
 
-
-
-
-
   render(){
 
-    const hpData=this.state.hpData.map(res=>{
-      return(
-        <div>
-          <h3>{res.title}</h3>
+          const hpData=this.state.hpData.map(res=>{
+            return(
+              <div>
+                <h3>{res.title}</h3>
+                <h4>{res.description}</h4>
+                <img src={res.image_url} alt='' className='blog-pic'/>
 
-        </div>
-      )
-
-    })
-
-
+              </div>
+            )
+          })
 
 
       return (
