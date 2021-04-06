@@ -43,9 +43,6 @@ class App extends Component{
 
   render(){
 
-         
-
-
       return (
 
       <div>
@@ -58,6 +55,10 @@ class App extends Component{
 
             <Route exact path="/PostPage/:id" render={(routerProps)=>(
               <PostPage hpData={this.state.hpData} {...routerProps}/>
+            )}/>
+
+            <Route exact path="/NewPost" render={(routerProps)=>(
+              <NewPost hpData={this.state.hpData} {...routerProps}/>
             )}/>
 
 
