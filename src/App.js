@@ -25,7 +25,7 @@ class App extends Component{
 
           const hpData=this.state.hpData.map(res=>{
             return(
-              <div>
+              <div className='post-container'>
                 <h3>{res.title}</h3>
                 <h4>{res.description}</h4>
                 <img src={res.image_url} alt='' className='blog-pic'/>
