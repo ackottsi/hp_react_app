@@ -36,14 +36,12 @@ const NewPost=(props)=>{
                 image_url:state.image_url,
                 title:state.title
             }
-            setState(data)
+            setState(data);
 
-            // const res=await axios.post(`${URL}/posts`, data)
-            // props.getAllPosts()
-        
-        props.history.push('/allposts')
-
-        }
+            const res=await axios.post(`${URL}/posts`, data)
+            props.getAllPosts()
+            props.history.push('/allposts')
+    }
 
     
 
