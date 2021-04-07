@@ -23,14 +23,20 @@ class App extends Component{
   }
 
   componentDidMount=async()=>{
-    const response=await axios.get(`${URL}/posts`)
-     
+    this.getAllPosts();    
+  }
 
-      const hpData=response.data;
+
+
+  getAllPosts=async()=>{
+    const response=await axios.get(`${URL}/posts`)
+    const hpData=response.data;
     this.setState({
+      hpData:hpData,
       apiDataLoaded:true
     })
-  }
+}
+
 
 
   getOnePost=async()=>{
