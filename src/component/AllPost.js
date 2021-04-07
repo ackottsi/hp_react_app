@@ -9,6 +9,7 @@ const AllPost = (props) =>{
             <h3>{res.title}</h3>
             <h4>{res.description}</h4>
             <img src={res.image_url} alt='' className='blog-pic'/>
+           
           </div>
         ))
     )

@@ -45,6 +45,13 @@ class App extends Component{
   }
 
 
+  deletePost=async(post)=>{
+    console.log('delete button pressed')
+    const hpData=this.state.hpData.filter(item=>item.id!==post.id);
+    console.log(hpData)
+  }
+
+
 
 
   render(){
@@ -56,7 +63,7 @@ class App extends Component{
 
           <div className="App">
             <Route exact path='/allposts' render={(routerProps)=>(
-              <AllPost hpData={this.state.hpData} {...routerProps} />
+              <AllPost hpData={this.state.hpData} deletePost={this.deletePost} {...routerProps} />
             )}/> 
 
             <Route exact path="/PostPage/:id" render={(routerProps)=>(
