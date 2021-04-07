@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { withRouter } from 'react-router-dom';
 import '../NewPost.css'
 import axios from 'axios'
 
@@ -36,6 +37,12 @@ const NewPost=(props)=>{
                 title:state.title
             }
             setState(data)
+
+            // const res=await axios.post(`${URL}/posts`, data)
+            // props.getAllPosts()
+        
+        props.history.push('/allposts')
+
         }
 
     
@@ -89,12 +96,9 @@ const NewPost=(props)=>{
 
        </form>
 
-
-
-
     </div>
     )
 
 }
 
-export default NewPost
+export default withRouter(NewPost)
