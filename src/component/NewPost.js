@@ -15,6 +15,7 @@ const NewPost=(props)=>{
 
 
     const handleChange=(e)=>{
+        console.log(e.target)
         e.preventDefault();
         const {name,value}=e.target;
         setState(prevState=>({
@@ -43,7 +44,22 @@ const NewPost=(props)=>{
 
 
     return(
-    <div>NewPost test</div>
+    <div className="new-post-container">
+
+        <form className="form-container" onSubmit={handleSubmit}>
+            <input
+                name='content_html'
+                type='text'
+                placeholder='content_html'
+                value={state.content_html}
+                onChange={handleChange}
+            />
+        </form>
+
+
+
+
+    </div>
     )
 
 }
