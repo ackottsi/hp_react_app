@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../NewPost.css'
 import axios from 'axios'
 
 const URL="https://hp-sample-blog.herokuapp.com"
@@ -11,7 +12,6 @@ const NewPost=(props)=>{
         image_url:'',
         title:''
     })
-
 
 
     const handleChange=(e)=>{
@@ -39,9 +39,6 @@ const NewPost=(props)=>{
         }
 
     
-
-
-
 
 
     return(
