@@ -25,7 +25,7 @@ const PostPage=(props)=>{
         }));
     }
 
-    const handleSubmit=async(e)=>{
+    const handleEdit=async(e)=>{
         console.log("button pressed")
         e.preventDefault();
             const data={
@@ -33,22 +33,28 @@ const PostPage=(props)=>{
                 image_url:state.image_url,
                 title:state.title
             }
-            
+            setState({editPost:!state.editPost})
     }
 
 
 
    console.log(foundPost)
+     
 
 
    return(
         <div>
+            {console.log(state.editPost)}
             {foundPost ? 
 
                 <div className="post-detail-conatiner">
                     <h3>{foundPost.title}</h3>
                     <h4>{foundPost.description}</h4>
-                    <img src={foundPost.image_url} alt='' className='blog-pic'/>                      
+                    <img src={foundPost.image_url} alt='' className='blog-pic'/>   
+                    <form onSubmit={handleEdit}>
+                     <input className="edit-button" type='submit' name='' value='edit'/>
+                    </form>
+
                 </div>
                     
             :       
