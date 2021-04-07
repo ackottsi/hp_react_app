@@ -46,7 +46,7 @@ class App extends Component{
 
 
   deletePost=async(post)=>{
-    console.log('delete button pressed')
+    console.log('delete button pressed '+post.id)
     const hpData=this.state.hpData.filter(item=>item.id!==post.id);
     console.log(hpData)
   }
