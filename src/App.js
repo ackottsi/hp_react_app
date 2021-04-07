@@ -24,7 +24,7 @@ class App extends Component{
 
   componentDidMount=async()=>{
     const response=await axios.get(`${URL}/posts`)
-      console.log(response.data)
+     
 
       const hpData=response.data;
     this.setState({
