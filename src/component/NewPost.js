@@ -26,6 +26,7 @@ const NewPost=(props)=>{
 
 
     const handleSubmit=async(e)=>{
+        console.log("button pressed")
         e.preventDefault();
             const data={
                 content_html:state.content_html,
@@ -86,6 +87,9 @@ const NewPost=(props)=>{
                 value={state.title}
                 onChange={handleChange}
             />
+
+            <input className="new-post" type='submit' value='New Post' />
+
        </form>
 
 
