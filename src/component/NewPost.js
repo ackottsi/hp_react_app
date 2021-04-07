@@ -7,14 +7,20 @@ const NewPost=(props)=>{
     const[state,setState]=useState({
         content_html:'',
         content_markdown:'',
-        created_at:'',
         description:'',
         image_url:'',
-        title:'',
-        updated_at:'',
-        url:'',
+        title:''
     })
-}
 
+
+
+
+
+
+    return(
+    <div>NewPost test</div>
+    )
+
+}
 
 export default NewPost

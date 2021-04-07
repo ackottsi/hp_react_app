@@ -17,7 +17,6 @@ class App extends Component{
     super(props);
     this.state={
       hpData:[],
-      postId:'',
       apiDataLoaded:false
      
     }
@@ -29,7 +28,6 @@ class App extends Component{
 
       const hpData=response.data;
     this.setState({
-      hpData:hpData,
       apiDataLoaded:true
     })
   }
