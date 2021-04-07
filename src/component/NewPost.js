@@ -54,7 +54,39 @@ const NewPost=(props)=>{
                 value={state.content_html}
                 onChange={handleChange}
             />
-        </form>
+
+            <input
+                name='content_markdown'
+                type='text'
+                placeholder='content_markdown'
+                value={state.content_markdown}
+                onChange={handleChange}
+            />
+
+            <input
+                name='description'
+                type='text'
+                placeholder='description'
+                value={state.description}
+                onChange={handleChange}
+            />
+
+            <input
+                name='image_url'
+                type='text'
+                placeholder='image_url'
+                value={state.image_url}
+                onChange={handleChange}
+            />
+
+            <input
+                name='title'
+                type='text'
+                placeholder='title'
+                value={state.title}
+                onChange={handleChange}
+            />
+       </form>
 
 
 
