@@ -1,4 +1,5 @@
 import React from 'react';
+import '../AllPost.css'
 
 const AllPost = (props) =>{
  
@@ -6,9 +7,10 @@ const AllPost = (props) =>{
     return(
         props.hpData.map(post=>(
           <div key={post.id} className='post-container'>
-            <h3>{post.title}</h3>
-            <h4>{post.description}</h4>
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
             <img src={post.image_url} alt='' className='blog-pic'/>
+            
             <button 
                 className='delete-button' 
                 id={post.id}

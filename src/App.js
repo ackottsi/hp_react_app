@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import axios from 'axios';
-import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import AllPost from './component/AllPost'
 import PostPage from './component/PostPage';
 import NewPost from './component/NewPost';
