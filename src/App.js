@@ -67,7 +67,7 @@ class App extends Component{
             )}/> 
 
             <Route exact path="/PostPage/:id" render={(routerProps)=>(
-              <PostPage hpData={this.state.hpData} {...routerProps}/>
+              <PostPage hpData={this.state.hpData} getAllPosts={this.getAllPosts} {...routerProps}/>
             )}/>
 
             <Route exact path="/NewPost" render={(routerProps)=>(

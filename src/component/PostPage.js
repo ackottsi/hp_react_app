@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router-dom';
 
+const URL="https://hp-sample-blog.herokuapp.com"
 
 
 const PostPage=(props)=>{
@@ -10,11 +12,14 @@ const PostPage=(props)=>{
     })
 
     const[state,setState]=useState({
-        description:'',
-        image_url:'',
-        title:'',
+        description:foundPost.description,
+        image_url:foundPost.image_url,
+        title:foundPost.title,
         editPost:false
     })
+
+
+    console.log(state.description)
 
     const handleChange=(e)=>{
         e.preventDefault();
@@ -33,12 +38,21 @@ const PostPage=(props)=>{
                 image_url:state.image_url,
                 title:state.title
             }
-            setState({editPost:!state.editPost})
+            const res=await axios.put(`${URL}/posts/${foundPost.id}`,data)
+            console.log(res)
+            const updatedData=res.data
+            setState({editPost:!state.editPost, 
+                    description:updatedData.description,
+                    image_url:updatedData.image_url,
+                    title:updatedData.title
+            })
+            props.getAllPosts();
+           
     }
 
 
 
-//    console.log(foundPost)
+
      
 
     if(state.editPost===false){
@@ -70,7 +84,7 @@ const PostPage=(props)=>{
     else if (state.editPost===true){
         return(
             <div className="post-detail-container">
-                editPost State True
+             
                 <form className="edit-form-container" onSubmit={handleEdit}>
                  
 
@@ -79,7 +93,6 @@ const PostPage=(props)=>{
                         type='text'
                         placeholder='description'
                         value={state.description}
-                        defaultValue={foundPost.description}
                         onChange={handleChange}
                     />
 
@@ -88,7 +101,6 @@ const PostPage=(props)=>{
                         type='text'
                         placeholder='image_url'
                         value={state.image_url}
-                        defaultValue={foundPost.image_url}
                         onChange={handleChange}
                     />
 
@@ -97,7 +109,6 @@ const PostPage=(props)=>{
                         type='text'
                         placeholder='title'
                         value={state.title}
-                        defaultValue={foundPost.title}
                         onChange={handleChange}
                     />
 
@@ -110,7 +121,7 @@ const PostPage=(props)=>{
     }
 }
 
-export default PostPage
+export default withRouter(PostPage)
 
 
 
