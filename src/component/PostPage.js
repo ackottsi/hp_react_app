@@ -41,30 +41,43 @@ const PostPage=(props)=>{
    console.log(foundPost)
      
 
+    if(state.editPost===false){
+            return(
+                    <div>
+                        {console.log(state.editPost)}
+                        {foundPost ? 
 
-   return(
-        <div>
-            {console.log(state.editPost)}
-            {foundPost ? 
+                            <div className="post-detail-conatiner">
+                                <h3>{foundPost.title}</h3>
+                                <h4>{foundPost.description}</h4>
+                                <img src={foundPost.image_url} alt='' className='blog-pic'/>   
+                                <form onSubmit={handleEdit}>
+                                <input className="edit-button" type='submit' name='' value='edit'/>
+                                </form>
 
-                <div className="post-detail-conatiner">
-                    <h3>{foundPost.title}</h3>
-                    <h4>{foundPost.description}</h4>
-                    <img src={foundPost.image_url} alt='' className='blog-pic'/>   
-                    <form onSubmit={handleEdit}>
-                     <input className="edit-button" type='submit' name='' value='edit'/>
-                    </form>
+                            </div>
+                                
+                        :       
 
-                </div>
-                    
-            :       
+                        <p>no post found</p>
 
-            <p>no post found</p>
+                        }   
+                        
+                    </div>       
+                )
+        }       
+    
+    else if (state.editPost===true){
+        return(
+            <div>
+                editPost State True
+                <form onSubmit={handleEdit}>
+                    <input className="edit-button" type='submit' name='' value='Submit Change'/>
+                </form>
+            </div>
+        )
 
-            }   
-            
-        </div>       
-   )
+    }
 }
 
 export default PostPage
