@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 import AllPost from './component/AllPost'
 import PostPage from './component/PostPage';
 import NewPost from './component/NewPost';
-
+import {Container, Row} from 'react-bootstrap'
 
 
 
@@ -59,6 +59,8 @@ class App extends Component{
       return (
 
       <div>
+        <Container>
+          <Row>
         {this.state.apiDataLoaded ?
 
           <div className="App">
@@ -75,13 +77,14 @@ class App extends Component{
             )}/>
 
 
-
+              
           </div>
         
         :
           <p>data not loaded</p>
         }
-
+        </Row>
+        </Container>
       </div>
 
       );
