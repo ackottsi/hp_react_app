@@ -14,6 +14,7 @@ const AllPost = (props) =>{
             <Link to={`/PostPage/${post.id}`}>
             <img src={post.image_url} alt='' className='blog-pic'/>
             </Link>
+          
 
             <button 
                 className='delete-button' 

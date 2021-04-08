@@ -7,8 +7,6 @@ const URL="https://hp-sample-blog.herokuapp.com"
 
 const NewPost=(props)=>{
     const[state,setState]=useState({
-        content_html:'',
-        content_markdown:'',
         description:'',
         image_url:'',
         title:''
@@ -39,7 +37,7 @@ const NewPost=(props)=>{
 
             const res=await axios.post(`${URL}/posts`, data)
             props.getAllPosts()
-            props.history.push('/allposts')
+            props.history.push('/')
     }
 
     
@@ -49,7 +47,7 @@ const NewPost=(props)=>{
     <div className="new-post-container">
 
         <form className="form-container" onSubmit={handleSubmit}>
-            <input
+            {/* <input
                 name='content_html'
                 type='text'
                 placeholder='content_html'
@@ -63,7 +61,7 @@ const NewPost=(props)=>{
                 placeholder='content_markdown'
                 value={state.content_markdown}
                 onChange={handleChange}
-            />
+            /> */}
 
             <input
                 name='description'
