@@ -38,7 +38,7 @@ const PostPage=(props)=>{
 
 
 
-   console.log(foundPost)
+//    console.log(foundPost)
      
 
     if(state.editPost===false){
@@ -69,10 +69,37 @@ const PostPage=(props)=>{
     
     else if (state.editPost===true){
         return(
-            <div>
+            <div className="post-detail-container">
                 editPost State True
-                <form onSubmit={handleEdit}>
+                <form className="edit-form-container" onSubmit={handleEdit}>
+                 
+
+                    <input
+                        name='description'
+                        type='text'
+                        placeholder='description'
+                        value={state.description}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name='image_url'
+                        type='text'
+                        placeholder='image_url'
+                        value={state.image_url}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        name='title'
+                        type='text'
+                        placeholder='title'
+                        value={state.title}
+                        onChange={handleChange}
+                    />
+
                     <input className="edit-button" type='submit' name='' value='Submit Change'/>
+
                 </form>
             </div>
         )

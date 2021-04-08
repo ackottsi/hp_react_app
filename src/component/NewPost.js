@@ -16,7 +16,6 @@ const NewPost=(props)=>{
 
 
     const handleChange=(e)=>{
-        console.log(e.target)
         e.preventDefault();
         const {name,value}=e.target;
         setState(prevState=>({
