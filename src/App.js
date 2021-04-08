@@ -62,7 +62,7 @@ class App extends Component{
         {this.state.apiDataLoaded ?
 
           <div className="App">
-            <Route exact path='/allposts' render={(routerProps)=>(
+            <Route exact path='/' render={(routerProps)=>(
               <AllPost hpData={this.state.hpData} deletePost={this.deletePost} {...routerProps} />
             )}/> 
 
