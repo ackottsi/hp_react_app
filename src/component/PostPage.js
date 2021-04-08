@@ -79,6 +79,7 @@ const PostPage=(props)=>{
                         type='text'
                         placeholder='description'
                         value={state.description}
+                        defaultValue={foundPost.description}
                         onChange={handleChange}
                     />
 
@@ -87,6 +88,7 @@ const PostPage=(props)=>{
                         type='text'
                         placeholder='image_url'
                         value={state.image_url}
+                        defaultValue={foundPost.image_url}
                         onChange={handleChange}
                     />
 
@@ -95,6 +97,7 @@ const PostPage=(props)=>{
                         type='text'
                         placeholder='title'
                         value={state.title}
+                        defaultValue={foundPost.title}
                         onChange={handleChange}
                     />
 
