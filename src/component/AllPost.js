@@ -21,8 +21,8 @@ const AllPost = (props) =>{
                     <Card.Text>
                     {post.description}
                     </Card.Text>
-                    <Button variant="primary" onClick={()=>props.deletePost(post)}>
-                        Delete Post
+                    <Button variant="primary" onClick={()=>props.history.push(`/PostPage/${post.id}`)}>
+                        More Info
                     </Button>
                 </Card.Body>
             </Card>
