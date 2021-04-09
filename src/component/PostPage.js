@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import '../PostPage.css'
 import {withRouter} from 'react-router-dom';
+import {Card, Button} from 'react-bootstrap'
 
 const URL="https://hp-sample-blog.herokuapp.com"
 
@@ -48,12 +50,7 @@ const PostPage=(props)=>{
             })
             props.getAllPosts();
            
-    }
-
-
-
-
-     
+    }  
 
     if(state.editPost===false){
             return(
@@ -62,13 +59,18 @@ const PostPage=(props)=>{
                         {foundPost ? 
 
                             <div className="post-detail-conatiner">
-                                <h3>{foundPost.title}</h3>
-                                <h4>{foundPost.description}</h4>
-                                <img src={foundPost.image_url} alt='' className='blog-pic'/>   
-                                <form onSubmit={handleEdit}>
-                                <input className="edit-button" type='submit' name='' value='edit'/>
-                                </form>
-
+                                <Card>
+                                    <Card.Img variant="top" src={foundPost.image_url}  />
+                                    <Card.Body>
+                                        <Card.Title>{foundPost.title}</Card.Title>
+                                        <Card.Text>
+                                        {foundPost.description}
+                                        </Card.Text>
+                                        <Button onClick={handleEdit} variant="secondary">Edit</Button>
+                                        <Button onSubmit={handleEdit} variant="secondary">Delete</Button>
+                                    </Card.Body>
+                                    </Card>
+                              
                             </div>
                                 
                         :       
@@ -125,3 +127,12 @@ export default withRouter(PostPage)
 
 
 
+
+
+
+{/* <h3>{foundPost.title}</h3>
+<h4>{foundPost.description}</h4>
+<img src={foundPost.image_url} alt='' className='blog-pic'/>   
+<form onSubmit={handleEdit}>
+<input className="edit-button" type='submit' name='' value='edit'/>
+</form> */}
