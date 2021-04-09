@@ -16,6 +16,7 @@ const NewPost=(props)=>{
     const handleChange=(e)=>{
         e.preventDefault();
         const {name,value}=e.target;
+        console.log(e.target)
         setState(prevState=>({
             ...prevState,
             [name]:value
@@ -24,7 +25,6 @@ const NewPost=(props)=>{
 
 
     const handleSubmit=async(e)=>{
-        console.log("button pressed")
         e.preventDefault();
             const data={
                 content_html:state.content_html,
