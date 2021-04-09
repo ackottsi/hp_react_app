@@ -46,8 +46,12 @@ class App extends Component{
 
 
   deletePost=async(post)=>{
- 
+   
     this.props.history.push('/')
+    await axios.delete(`${URL}/posts/${post.id}`)
+    const hpData=this.state.hpData.filter(item=>item.id!==post.id);
+    this.setState({hpData})
+    console.log('test')
   }
 
 
@@ -92,6 +96,5 @@ class App extends Component{
 }
 
 export default withRouter(App);
-   // await axios.delete(`${URL}/posts/${post.id}`)
-    // const hpData=this.state.hpData.filter(item=>item.id!==post.id);
-    // this.setState({hpData})
+   
+

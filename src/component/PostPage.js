@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import '../PostPage.css'
 import {withRouter} from 'react-router-dom';
@@ -33,7 +33,6 @@ const PostPage=(props)=>{
     }
 
     const handleEdit=async(e)=>{
-        console.log("button pressed")
         e.preventDefault();
             const data={
                 description:state.description,
