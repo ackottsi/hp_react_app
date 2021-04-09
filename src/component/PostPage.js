@@ -67,7 +67,7 @@ const PostPage=(props)=>{
                                         {foundPost.description}
                                         </Card.Text>
                                         <Button onClick={handleEdit} variant="secondary">Edit</Button>
-                                        <Button onSubmit={handleEdit} variant="secondary">Delete</Button>
+                                        <Button onClick={()=>props.deletePost(foundPost)} variant="secondary">Delete</Button>
                                     </Card.Body>
                                     </Card>
                               
@@ -89,7 +89,7 @@ const PostPage=(props)=>{
              
                 <form className="edit-form-container" onSubmit={handleEdit}>
                  
-
+                    description:
                     <input
                         name='description'
                         type='text'
@@ -97,7 +97,7 @@ const PostPage=(props)=>{
                         value={state.description}
                         onChange={handleChange}
                     />
-
+                    image_url:
                     <input
                         name='image_url'
                         type='text'
@@ -105,7 +105,7 @@ const PostPage=(props)=>{
                         value={state.image_url}
                         onChange={handleChange}
                     />
-
+                    title:
                     <input
                         name='title'
                         type='text'

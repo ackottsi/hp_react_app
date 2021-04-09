@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import axios from 'axios';
-import {Route} from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import AllPost from './component/AllPost'
 import PostPage from './component/PostPage';
 import NewPost from './component/NewPost';
@@ -46,9 +46,8 @@ class App extends Component{
 
 
   deletePost=async(post)=>{
-    await axios.delete(`${URL}/posts/${post.id}`)
-    const hpData=this.state.hpData.filter(item=>item.id!==post.id);
-    this.setState({hpData})
+ 
+    this.props.history.push('/')
   }
 
 
@@ -65,11 +64,12 @@ class App extends Component{
 
           <div className="App">
             <Route exact path='/' render={(routerProps)=>(
-              <AllPost hpData={this.state.hpData} deletePost={this.deletePost} {...routerProps} />
+              <AllPost hpData={this.state.hpData}  {...routerProps} />
             )}/> 
 
             <Route exact path="/PostPage/:id" render={(routerProps)=>(
-              <PostPage hpData={this.state.hpData} getAllPosts={this.getAllPosts} {...routerProps}/>
+              <PostPage hpData={this.state.hpData} deletePost={this.deletePost} 
+              getAllPosts={this.getAllPosts} {...routerProps}/>
             )}/>
 
             <Route exact path="/NewPost" render={(routerProps)=>(
@@ -91,4 +91,7 @@ class App extends Component{
   }
 }
 
-export default App;
+export default withRouter(App);
+   // await axios.delete(`${URL}/posts/${post.id}`)
+    // const hpData=this.state.hpData.filter(item=>item.id!==post.id);
+    // this.setState({hpData})
