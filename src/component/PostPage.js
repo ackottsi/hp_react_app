@@ -89,8 +89,8 @@ const PostPage=(props)=>{
              
                 <form className="edit-form-container" onSubmit={handleEdit}>
                  
-            
-                title:
+                
+                    Title:
                     <input
                         name='title'
                         type='text'
@@ -99,26 +99,26 @@ const PostPage=(props)=>{
                         onChange={handleChange}
                     />
 
-                image_url:
-                <input
-                    name='image_url'
-                    type='text'
-                    placeholder='image_url'
-                    value={state.image_url}
-                    onChange={handleChange}
-                />
+                    Description:
+                    <TextareaAutosize
+                        name='description'
+                        placeholder='description'
+                        value={state.description}
+                        className='textarea-new-post'
+                        onChange={handleChange}
+                    />
 
-                description:
-                <TextareaAutosize
-                    name='description'
-                    placeholder='description'
-                    value={state.description}
-                    className='textarea-new-post'
-                    onChange={handleChange}
-                />
 
-                    {/* <input className="edit-button" type='submit' name='' value='Submit Change'/> */}
-                    <Button type='submit' variant="secondary" className='edit-submit-btn'>Submit Change</Button>
+                    Image_url:
+                    <input
+                        name='image_url'
+                        type='text'
+                        placeholder='image_url'
+                        value={state.image_url}
+                        onChange={handleChange}
+                    />
+
+                   <Button type='submit' variant="secondary" className='edit-submit-btn'>Submit Change</Button>
                 </form>
             </div>
         )
