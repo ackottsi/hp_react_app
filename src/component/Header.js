@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const Header=(props)=>{
     return(
-        <div className="header-container">
+        <div className='fixed-top'>
             <Navbar bg="dark" variant="dark">
                 <Nav className="mr-auto">
                 <Link to='/' className='nav-link'>Home</Link>
@@ -17,20 +17,11 @@ const Header=(props)=>{
             <br />
      
     
-      <br />
       
        
-  
 
-        <div className="header-container">
-            <Row className="justify-content-md-center">
-                <Col>
-                <Link to='/' className='btn btn-primary header-btn'>HomePage</Link>
-                <Link to='/NewPost' className='btn btn-primary header-btn'>New Post</Link>
-                </Col>
-            </Row>
         </div>
-    </div>
+
     )
 }
 
