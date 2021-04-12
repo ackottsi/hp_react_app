@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import axios from 'axios';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import AllPost from './component/AllPost'
 import PostPage from './component/PostPage';
 import NewPost from './component/NewPost';
@@ -71,19 +71,21 @@ class App extends Component{
           <div className="App">
             
             <Header/>
-            <Route exact path='/' render={(routerProps)=>(
-              <AllPost hpData={this.state.hpData}  {...routerProps} />
-            )}/> 
 
-            <Route exact path="/PostPage/:id" render={(routerProps)=>(
-              <PostPage hpData={this.state.hpData} deletePost={this.deletePost} 
-              getAllPosts={this.getAllPosts} {...routerProps}/>
-            )}/>
+            <Switch>             
+              <Route exact path='/' render={(routerProps)=>(
+                <AllPost hpData={this.state.hpData}  {...routerProps} />
+              )}/> 
 
-            <Route exact path="/NewPost" render={(routerProps)=>(
-              <NewPost hpData={this.state.hpData} getAllPosts={this.getAllPosts} {...routerProps}/>
-            )}/>
+              <Route exact path="/PostPage/:id" render={(routerProps)=>(
+                <PostPage hpData={this.state.hpData} deletePost={this.deletePost} 
+                getAllPosts={this.getAllPosts} {...routerProps}/>
+              )}/>
 
+              <Route exact path="/NewPost" render={(routerProps)=>(
+                <NewPost hpData={this.state.hpData} getAllPosts={this.getAllPosts} {...routerProps}/>
+              )}/>
+            </Switch>
 
               
           </div>
