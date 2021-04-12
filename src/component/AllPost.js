@@ -21,7 +21,7 @@ const AllPost = (props) =>{
                     <Card.Text>
                     {post.description}
                     </Card.Text>
-                    <Button variant="primary" onClick={()=>props.history.push(`/PostPage/${post.id}`)}>
+                    <Button variant='secondary' onClick={()=>props.history.push(`/PostPage/${post.id}`)}>
                         More Info
                     </Button>
                 </Card.Body>
