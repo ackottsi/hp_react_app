@@ -89,7 +89,7 @@ const PostPage=(props)=>{
              
                 <form className="edit-form-container" onSubmit={handleEdit}>
                  
-
+            
                 title:
                     <input
                         name='title'
@@ -108,7 +108,7 @@ const PostPage=(props)=>{
                     onChange={handleChange}
                 />
 
-                title:
+                description:
                 <TextareaAutosize
                     name='description'
                     placeholder='description'
@@ -117,8 +117,8 @@ const PostPage=(props)=>{
                     onChange={handleChange}
                 />
 
-                    <input className="edit-button" type='submit' name='' value='Submit Change'/>
-
+                    {/* <input className="edit-button" type='submit' name='' value='Submit Change'/> */}
+                    <Button type='submit' variant="secondary" className='edit-submit-btn'>Submit Change</Button>
                 </form>
             </div>
         )
