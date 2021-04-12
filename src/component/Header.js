@@ -5,13 +5,13 @@ import {Link} from 'react-router-dom'
 
 const Header=(props)=>{
     return(
-        <Row>
-            <Col><Link to='/' className='btn btn-primary' variant="primary">HomePage</Link>{' '}</Col>
-            <Col> <Button variant="primary">New Post</Button>{' '}</Col>
-            <Col> <Button variant="primary">Something</Button>{' '}</Col>
-            
-
-        </Row>
+        <div className="header-container">
+            <Row>
+                <Col><Link to='/' className='btn btn-primary'>HomePage</Link>{' '}</Col>
+                <Col> <Link to='/NewPost' className='btn btn-primary'>New Post</Link>{' '}</Col>
+                <Col> <Button variant="primary">Something</Button>{' '}</Col>
+            </Row>
+        </div>
             
     )
 }
