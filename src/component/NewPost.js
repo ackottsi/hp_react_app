@@ -79,13 +79,6 @@ const NewPost=(props)=>{
 
                 />
 
-            {/* <input
-                name='description'
-                type='textarea'
-                placeholder='description'
-                value={state.description}
-                onChange={handleChange}
-            /> */}
 
             <input
                 name='image_url'
