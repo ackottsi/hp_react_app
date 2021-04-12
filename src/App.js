@@ -5,6 +5,7 @@ import {Route, withRouter} from 'react-router-dom';
 import AllPost from './component/AllPost'
 import PostPage from './component/PostPage';
 import NewPost from './component/NewPost';
+import Header from './component/Header'
 import {Container, Row} from 'react-bootstrap'
 
 
@@ -62,11 +63,14 @@ class App extends Component{
       return (
 
       <div>
+        
         <Container>
           <Row>
         {this.state.apiDataLoaded ?
 
           <div className="App">
+            
+            <Header/>
             <Route exact path='/' render={(routerProps)=>(
               <AllPost hpData={this.state.hpData}  {...routerProps} />
             )}/> 
