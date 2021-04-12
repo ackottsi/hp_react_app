@@ -62,13 +62,13 @@ class App extends Component{
 
       return (
 
-      <div>
+      <div className='App'>
         
         <Container>
           <Row>
         {this.state.apiDataLoaded ?
 
-          <div className="App">
+          <div className='app-container'>
             
             <Header/>
 

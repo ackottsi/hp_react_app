@@ -9,8 +9,8 @@ const AllPost = (props) =>{
  
 
     return(
-        
-        props.hpData.map(post=>(
+        <div className='test-container'>
+        {props.hpData.map(post=>(
           <div key={post.id} className='post-container'>
            <Card style={{ width: '18rem' }}>
                 <Link to={`/PostPage/${post.id}`}>
@@ -27,22 +27,9 @@ const AllPost = (props) =>{
                 </Card.Body>
             </Card>
 
-            {/* <h2>{post.title}</h2>
-            <p>{post.description}</p>
-         
-            <img src={post.image_url} alt='' className='blog-pic'/>
-           
-           */}
-
-            {/* <button 
-                className='delete-button' 
-                id={post.id}
-                onClick={()=>props.deletePost(post)}
-            >
-            Delete Post
-            </button> */}
           </div>
-        ))
+        ))}
+    </div>
 
     )
 
