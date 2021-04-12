@@ -3,9 +3,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 
-input{
-    margin: 10px;
+
+
+
+.textarea-new-post{
+    border:solid black;
+    margin-bottom: 10px;
+}
+
+.new-post-container input{
+    margin: 0px 0px 10px 0px;
     border: solid black;
+}
+
+.submit-post-btn{
+    margin-top: 40px;
 }

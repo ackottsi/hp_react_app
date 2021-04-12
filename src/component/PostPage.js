@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import '../PostPage.css'
 import {withRouter} from 'react-router-dom';
-import {Card, Button} from 'react-bootstrap'
+import {Card, Button} from 'react-bootstrap';
+import TextareaAutosize from 'react-textarea-autosize'
 
 const URL="https://hp-sample-blog.herokuapp.com"
 
@@ -88,23 +89,8 @@ const PostPage=(props)=>{
              
                 <form className="edit-form-container" onSubmit={handleEdit}>
                  
-                    description:
-                    <input
-                        name='description'
-                        type='text'
-                        placeholder='description'
-                        value={state.description}
-                        onChange={handleChange}
-                    />
-                    image_url:
-                    <input
-                        name='image_url'
-                        type='text'
-                        placeholder='image_url'
-                        value={state.image_url}
-                        onChange={handleChange}
-                    />
-                    title:
+                
+                    Title:
                     <input
                         name='title'
                         type='text'
@@ -113,8 +99,26 @@ const PostPage=(props)=>{
                         onChange={handleChange}
                     />
 
-                    <input className="edit-button" type='submit' name='' value='Submit Change'/>
+                    Description:
+                    <TextareaAutosize
+                        name='description'
+                        placeholder='description'
+                        value={state.description}
+                        className='textarea-new-post'
+                        onChange={handleChange}
+                    />
 
+
+                    Image_url:
+                    <input
+                        name='image_url'
+                        type='text'
+                        placeholder='image_url'
+                        value={state.image_url}
+                        onChange={handleChange}
+                    />
+
+                   <Button type='submit' variant="secondary" className='edit-submit-btn'>Submit Change</Button>
                 </form>
             </div>
         )
