@@ -9,3 +9,8 @@ input{
     margin: 10px;
     border: solid black;
 }
+
+
+.textarea-new-post{
+    border:solid black;
+}

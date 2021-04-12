@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { withRouter } from 'react-router-dom';
 import '../NewPost.css'
 import axios from 'axios'
+import TextareaAutosize from 'react-textarea-autosize'
 
 const URL="https://hp-sample-blog.herokuapp.com"
 
@@ -61,14 +62,30 @@ const NewPost=(props)=>{
                 value={state.content_markdown}
                 onChange={handleChange}
             /> */}
-
-            <input
-                name='description'
+             <input
+                name='title'
                 type='text'
+                placeholder='title'
+                value={state.title}
+                onChange={handleChange}
+            />
+
+            <TextareaAutosize
+                name='description'
+                placeholder='description'
+                value={state.description}
+                className='textarea-new-post'
+                onChange={handleChange}
+
+                />
+
+            {/* <input
+                name='description'
+                type='textarea'
                 placeholder='description'
                 value={state.description}
                 onChange={handleChange}
-            />
+            /> */}
 
             <input
                 name='image_url'
@@ -78,13 +95,7 @@ const NewPost=(props)=>{
                 onChange={handleChange}
             />
 
-            <input
-                name='title'
-                type='text'
-                placeholder='title'
-                value={state.title}
-                onChange={handleChange}
-            />
+           
 
             <input className="new-post" type='submit' value='New Post' />
 
