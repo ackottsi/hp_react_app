@@ -13,13 +13,15 @@
 
 
 .textarea-new-post{
-    border:solid black;
+    border:solid #343a40;
     margin-bottom: 10px;
+    border-width: 1px;
 }
 
 .new-post-container input{
     margin: 0px 0px 10px 0px;
-    border: solid black;
+    border: solid #343a40;
+    border-width: 1px;
 }
 
 .submit-post-btn{
