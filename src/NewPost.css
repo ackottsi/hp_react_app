@@ -3,9 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    color: white;
 }
 
+.new-post-container{
+    margin-top: 80px;
+}
 
 
 

@@ -54,11 +54,11 @@ const PostPage=(props)=>{
 
     if(state.editPost===false){
             return(
-                    <div>
+                    <div className='post-detail-container'>
                         {console.log(state.editPost)}
                         {foundPost ? 
 
-                            <div className="post-detail-conatiner">
+                            <div>
                                 <Card>
                                     <Card.Img variant="top" src={foundPost.image_url}  />
                                     <Card.Body>
@@ -85,7 +85,7 @@ const PostPage=(props)=>{
     
     else if (state.editPost===true){
         return(
-            <div className="post-detail-container">
+            <div>
              
                 <form className="edit-form-container" onSubmit={handleEdit}>
                  
