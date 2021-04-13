@@ -118,7 +118,7 @@ const PostPage=(props)=>{
                         onChange={handleChange}
                     />
 
-                   <Button type='submit' variant="secondary" className='edit-submit-btn'>Submit Change</Button>
+                   <Button type='submit' variant="dark" className='edit-submit-btn'>Submit Change</Button>
                 </form>
             </div>
         )

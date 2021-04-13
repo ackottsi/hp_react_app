@@ -92,7 +92,7 @@ const NewPost=(props)=>{
             />
 
     
-            <Button type='submit' variant="secondary" className='submit-post-btn'>Submit Post</Button>
+            <Button type='submit' variant="dark" className='submit-post-btn'>Submit Post</Button>
 
        </form>
 
