@@ -2,16 +2,16 @@ import './App.css';
 import { Component } from 'react';
 import axios from 'axios';
 import {Route, Switch, withRouter} from 'react-router-dom';
-import AllPost from './component/AllPost'
+import AllPost from './component/AllPost';
 import PostPage from './component/PostPage';
 import NewPost from './component/NewPost';
-import Header from './component/Header'
-import {Container, Row} from 'react-bootstrap'
+import Header from './component/Header';
+import {Container, Row} from 'react-bootstrap';
 
 
 
 
-const URL="https://hp-sample-blog.herokuapp.com"
+const URL='https://hp-sample-blog.herokuapp.com';
 
 class App extends Component{
   constructor(props){
@@ -23,21 +23,21 @@ class App extends Component{
     }
   }
 
-  componentDidMount=async()=>{
-    this.getAllPosts();    
+    componentDidMount=async()=>{
+      this.getAllPosts();    
+    }
+
+
+
+    getAllPosts=async()=>{
+      const response=await axios.get(`${URL}/posts`)
+      console.log(response)
+      const hpData=response.data;
+      this.setState({
+        hpData:hpData,
+        apiDataLoaded:true
+      })
   }
-
-
-
-  getAllPosts=async()=>{
-    const response=await axios.get(`${URL}/posts`)
-    console.log(response)
-    const hpData=response.data;
-    this.setState({
-      hpData:hpData,
-      apiDataLoaded:true
-    })
-}
 
 
 
@@ -62,43 +62,44 @@ class App extends Component{
 
       return (
 
-      <div className='App'>
-        
-        <Container>
-          <Row>
-        {this.state.apiDataLoaded ?
+        <div className='App'>
+          
+            <Container>
+                <Row>
+                  {this.state.apiDataLoaded ?
 
-          <div className='app-container'>
-            
-            <Header/>
+                    <div className='app-container'>
+                      
+                      <Header/>
 
-            <Switch>             
-              <Route exact path='/' render={(routerProps)=>(
-                <AllPost hpData={this.state.hpData}  {...routerProps} />
-              )}/> 
+                      <Switch>             
+                        <Route exact path='/' render={(routerProps)=>(
+                          <AllPost hpData={this.state.hpData}  {...routerProps} />
+                        )}/> 
 
-              <Route exact path="/PostPage/:id" render={(routerProps)=>(
-                <PostPage hpData={this.state.hpData} deletePost={this.deletePost} 
-                getAllPosts={this.getAllPosts} {...routerProps}/>
-              )}/>
+                        <Route exact path='/PostPage/:id' render={(routerProps)=>(
+                          <PostPage hpData={this.state.hpData} deletePost={this.deletePost} 
+                          getAllPosts={this.getAllPosts} {...routerProps}/>
+                        )}/>
 
-              <Route exact path="/NewPost" render={(routerProps)=>(
-                <NewPost hpData={this.state.hpData} getAllPosts={this.getAllPosts} {...routerProps}/>
-              )}/>
-            </Switch>
+                        <Route exact path='/NewPost' render={(routerProps)=>(
+                          <NewPost hpData={this.state.hpData} getAllPosts={this.getAllPosts} {...routerProps}/>
+                        )}/>
+                      </Switch>
 
-              
-          </div>
-        
-        :
-          <p>data not loaded</p>
-        }
-        </Row>
-        </Container>
-      </div>
+                        
+                    </div>
+                  
+                  :
+                    <p>data not loaded</p>
+                  }
+                </Row>
+              </Container>
+
+        </div>
 
       );
-  }
+    }
 }
 
 export default withRouter(App);
