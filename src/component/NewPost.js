@@ -5,7 +5,7 @@ import axios from 'axios'
 import TextareaAutosize from 'react-textarea-autosize'
 import {Card, Button} from 'react-bootstrap';
 
-const URL="https://hp-sample-blog.herokuapp.com"
+const URL='https://hp-sample-blog.herokuapp.com'
 
 const NewPost=(props)=>{
     const[state,setState]=useState({
@@ -45,9 +45,9 @@ const NewPost=(props)=>{
 
 
     return(
-    <div className="new-post-container">
+    <div className='new-post-container'>
 
-        <form className="form-container" onSubmit={handleSubmit}>
+        <form className='form-container' onSubmit={handleSubmit}>
             {/* <input
                 name='content_html'
                 type='text'
@@ -92,7 +92,7 @@ const NewPost=(props)=>{
             />
 
     
-            <Button type='submit' variant="dark" className='submit-post-btn'>Submit Post</Button>
+            <Button type='submit' variant='dark' className='submit-post-btn'>Submit Post</Button>
 
        </form>
 

@@ -8,8 +8,8 @@ import Navbar from 'react-bootstrap/Navbar'
 const Header=(props)=>{
     return(
         <div className='fixed-top'>
-            <Navbar bg="dark" variant="dark">
-                <Nav className="mr-auto">
+            <Navbar bg='dark' variant='dark'>
+                <Nav className='mr-auto'>
                 <Link to='/' className='nav-link'>Home</Link>
                 <Link to='/NewPost' className='nav-link'>New Post</Link>
                 </Nav>

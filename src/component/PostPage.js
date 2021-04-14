@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import '../PostPage.css'
 import {withRouter} from 'react-router-dom';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Form} from 'react-bootstrap';
 import TextareaAutosize from 'react-textarea-autosize'
 
 const URL="https://hp-sample-blog.herokuapp.com"
