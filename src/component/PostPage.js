@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import '../PostPage.css'
+import '../PostPage.css';
 import {withRouter} from 'react-router-dom';
-import {Card, Button, Form} from 'react-bootstrap';
-import TextareaAutosize from 'react-textarea-autosize'
+import {Card, Button} from 'react-bootstrap';
+import TextareaAutosize from 'react-textarea-autosize';
 
-const URL="https://hp-sample-blog.herokuapp.com"
+const URL='https://hp-sample-blog.herokuapp.com';
 
 
 const PostPage=(props)=>{
@@ -132,10 +132,3 @@ export default withRouter(PostPage)
 
 
 
-
-{/* <h3>{foundPost.title}</h3>
-<h4>{foundPost.description}</h4>
-<img src={foundPost.image_url} alt='' className='blog-pic'/>   
-<form onSubmit={handleEdit}>
-<input className="edit-button" type='submit' name='' value='edit'/>
-</form> */}

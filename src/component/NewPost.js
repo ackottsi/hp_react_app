@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import '../NewPost.css'
 import axios from 'axios'
 import TextareaAutosize from 'react-textarea-autosize'
-import {Card, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 const URL='https://hp-sample-blog.herokuapp.com'
 
@@ -101,4 +101,4 @@ const NewPost=(props)=>{
 
 }
 
-export default withRouter(NewPost)
+export default withRouter(NewPost);
